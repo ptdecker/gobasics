@@ -8,14 +8,17 @@ This repository contains solutions to the examples presented in the book
 
 ### Chapter 1 - "A Tutorial Introduction"
 
-* 1-01 - echo4:  Variation on 'echo3' which also prints the name of the envoking command
-* 1-02 - echo5:  Variation on 'echo2' which also prints the index of each argument one per line
+* 1-01 - echo4:  Variation of 'echo3' which also prints the name of the envoking command
+* 1-02 - echo5:  Variation of 'echo2' which also prints the index of each argument one per line
 * 1-03 -
   * echo6 (+):  Variation of 'echo2' that also displays timing. Compare against 'echo7' for exercise 1-03 solution.
   * echo7 (+):  Variation of 'echo3' that also displays timing. Execution is slightly faster than 'echo6'
 * 1-04 - dup4:  Prints the names of all files in which a duplicate line appears
-* 1-05 - lissajous2:  Variation on 'lissajous1' with a color variation of a traditional oscilliscope image
-* 1-06 - lissajous3:  Variation on 'lissajous1' with a dynamic color variation based upon current cycle
+* 1-05 - lissajous2:  Variation o 'lissajous1' with a color variation of a traditional oscilliscope image
+* 1-06 - lissajous3:  Variation of 'lissajous1' with a dynamic color variation based upon current cycle
+* 1-07 - fetch2:  Variation of 'fetch1' that leverages io.Copy to avoid the need for a buffer
+* 1-08 - fetch3:  Variation of 'fetch2' that adds an 'http://' prefix if it is missing from the URL
+* 1-09 - fetch4:  Variation of 'fetch3' that also prints the HTTP status code
 
 ## Solution Notes
 
@@ -39,6 +42,8 @@ This repository also includes working examples from the book.  These are also av
   * dup3
 * Section 1.4 - "Animaged GIFs"
   * lissajous1
+* Section 1.5 - "Fetching a URL"
+  * fetch1
 
 ##Benchmarking
 
