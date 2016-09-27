@@ -13,6 +13,11 @@ This repository contains solutions to the examples presented in the book
 * 1-03 -
   * echo6 (+):  Variation of 'echo2' that also displays timing. Compare against 'echo7' for exercise 1-03 solution.
   * echo7 (+):  Variation of 'echo3' that also displays timing. Execution is slightly faster than 'echo6'
+* 1-04 - dup4:  Prints the names of all files in which a duplicate line appears
+
+## Solution Notes
+
+Each worked excercise attempts to only use capabilities that have been introduced so far in the book (i.e. no forward references to knowledge).  Where this is deliberately not the case, a comment in the code is provided.
 
 ## Book Examples
 
@@ -26,6 +31,10 @@ This repository also includes working examples from the book.  These are also av
   * echo1
   * echo2
   * echo3
+* Section 1.3 - "Finding Duplicate lines"
+  * dup1
+  * dup2
+  * dup3
 
 ##Benchmarking
 
