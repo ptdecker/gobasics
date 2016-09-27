@@ -14,6 +14,8 @@ This repository contains solutions to the examples presented in the book
   * echo6 (+):  Variation of 'echo2' that also displays timing. Compare against 'echo7' for exercise 1-03 solution.
   * echo7 (+):  Variation of 'echo3' that also displays timing. Execution is slightly faster than 'echo6'
 * 1-04 - dup4:  Prints the names of all files in which a duplicate line appears
+* 1-05 - lissajous2:  Variation on 'lissajous1' with a color variation of a traditional oscilliscope image
+* 1-06 - lissajous3:  Variation on 'lissajous1' with a dynamic color variation based upon current cycle
 
 ## Solution Notes
 
@@ -35,6 +37,8 @@ This repository also includes working examples from the book.  These are also av
   * dup1
   * dup2
   * dup3
+* Section 1.4 - "Animaged GIFs"
+  * lissajous1
 
 ##Benchmarking
 
