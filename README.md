@@ -19,6 +19,14 @@ This repository contains solutions to the examples presented in the book
 * 1-07 - fetch2:  Variation of 'fetch1' that leverages io.Copy to avoid the need for a buffer
 * 1-08 - fetch3:  Variation of 'fetch2' that adds an 'http://' prefix if it is missing from the URL
 * 1-09 - fetch4:  Variation of 'fetch3' that also prints the HTTP status code
+* 1-10 - fetchall2:  Variation of 'fetch1' that fetches the URLs twice without exiting to shell. To satisfy the excercise requirement of writting the output to a file, run with `bin/fetchall2 http://facebook.com > results.txt` to pipe output to results.txt.
+* 1-11 - Use 'fetchall1' to run a sample of sites from [Alexa](http://www.alexa.com/topsites). A possible run could be `bin/fetchall1 http://google.com http://youtube.com http://facebook.com http://baidu.com http://yahoo.com http://wikipedia.org http://amazon.com http://twitter.com http://qq.com > results.txt`. I was not able to find a site that would not respond.  So, you can use extras/norespserver as a testing tool.
+
+### Extras
+
+The following programs are provided as extras.
+
+* norespserver.go:  A basic http server that never responds to requests sent to it.  Use to test exercise 1-11
 
 ## Solution Notes
 
@@ -44,6 +52,8 @@ This repository also includes working examples from the book.  These are also av
   * lissajous1
 * Section 1.5 - "Fetching a URL"
   * fetch1
+* Section 1.6 - "Fetching URLs Concurrently"
+  * fetch2
 
 ##Benchmarking
 
