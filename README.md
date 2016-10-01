@@ -21,6 +21,7 @@ This repository contains solutions to the examples presented in the book
 * 1-09 - fetch4:  Variation of 'fetch3' that also prints the HTTP status code
 * 1-10 - fetchall2:  Variation of 'fetch1' that fetches the URLs twice without exiting to shell. To satisfy the excercise requirement of writting the output to a file, run with `bin/fetchall2 http://facebook.com > results.txt` to pipe output to results.txt.
 * 1-11 - Use 'fetchall1' to run a sample of sites from [Alexa](http://www.alexa.com/topsites). A possible run could be `bin/fetchall1 http://google.com http://youtube.com http://facebook.com http://baidu.com http://yahoo.com http://wikipedia.org http://amazon.com http://twitter.com http://qq.com > results.txt`. I was not able to find a site that would not respond.  So, you can use extras/norespserver as a testing tool.
+* 1-12 - lissajous5:  Variation of 'lissajous4' adding support for passing a 'cycles' parameter to set number of cycles in addition to the basic web server 'lissajous4' added to 'lissajous3'
 
 ### Extras
 
@@ -54,6 +55,11 @@ This repository also includes working examples from the book.  These are also av
   * fetch1
 * Section 1.6 - "Fetching URLs Concurrently"
   * fetch2
+* Section 1.7 - "A Web Server"
+  * server1
+  * server2
+  * server3
+  * lissajous4 - 'lissajous3' with built-in web server 
 
 ##Benchmarking
 
