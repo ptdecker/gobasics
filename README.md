@@ -23,11 +23,23 @@ This repository contains solutions to the examples presented in the book
 * 1-11 - Use 'fetchall1' to run a sample of sites from [Alexa](http://www.alexa.com/topsites). A possible run could be `bin/fetchall1 http://google.com http://youtube.com http://facebook.com http://baidu.com http://yahoo.com http://wikipedia.org http://amazon.com http://twitter.com http://qq.com > results.txt`. I was not able to find a site that would not respond.  So, you can use extras/norespserver as a testing tool.
 * 1-12 - lissajous5:  Variation of 'lissajous4' adding support for passing a 'cycles' parameter to set number of cycles in addition to the basic web server 'lissajous4' added to 'lissajous3'
 
+### Chapter 2 - "Program Structure"
+
+* 2-01 -
+  * tempconv1 [p]:  Extends 'tempconv' to include types, constants, and functions to support the Kelvin scale
+  * cfk [tempconv1]: Variation of 'cf' extended to support Kelvin conversions using 'tempconv1'  
+
 ### Extras
 
 The following programs are provided as extras.
 
 * norespserver.go:  A basic http server that never responds to requests sent to it.  Use to test exercise 1-11
+
+## Compiling
+
+A bash shell script is provided to compile and install all the exercise packages.  Successfully installed packages are placed in the 'bin' sub-directory.
+
+    $ ./build.sh
 
 ## Solution Notes
 
@@ -35,7 +47,7 @@ Each worked excercise attempts to only use capabilities that have been introduce
 
 ## Book Examples
 
-This repository also includes working examples from the book.  These are also available from the authors, but the versions that I hand entered (hard way as opposed to pulling them down from the author) are included for completness.
+This repository also includes working examples from the book.  These are also available from the authors, but the versions that I hand entered (hard way as opposed to pulling them down from the author) are included for completness. "[p]" is used to indicate packages which contain no 'main' and thus will appear directy in `bin`.  For convienence, when such packages are used, the package which ccontains 'main' lists the other packages it uses.
 
 ### Chapter 1
 
@@ -60,6 +72,17 @@ This repository also includes working examples from the book.  These are also av
   * server2
   * server3
   * lissajous4 - 'lissajous3' with built-in web server 
+
+## Chapter 2
+
+* Section 2.2 - "Declarations"
+  * boiling
+  * ftoc
+* Section 2.3.2 - "Pointers"
+  * echo8 [named 'echo4' in the text]
+* Section 2.6 - "Packages and Files"
+  * tempconv [p]
+  * cf [tempconv]
 
 ##Benchmarking
 
