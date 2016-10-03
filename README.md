@@ -28,6 +28,9 @@ This repository contains solutions to the examples presented in the book
 * 2-01 -
   * tempconv1 [p]:  Extends 'tempconv' to include types, constants, and functions to support the Kelvin scale
   * cfk [tempconv1]: Variation of 'cf' extended to support Kelvin conversions using 'tempconv1'  
+* 2-02 -
+  * genconv [p]:  Generic conversions package
+  * gounits [genconv]:  Converts a broad range of units from one to the other
 
 ### Extras
 
@@ -102,7 +105,9 @@ For example, to run the benchmark assoicated with 'echo6' from exercise 1-03 you
 
 The following test data files are provided to support manually testing the exercises. Specifically, the ones that draw from standard input can be manually tested with these.
 
-None yet
+* hasdups.txt: a text file containing duplicate lines
+* nodups.txt: a text file that does not contain duplicate lines
+* numbers.txt: a text file containing one number (positive and negative integers and floating point) per line
 
 ##License
 
