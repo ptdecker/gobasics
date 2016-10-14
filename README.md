@@ -6,6 +6,8 @@ This repository contains solutions to the examples presented in the book
 
 ## Worked Exercises
 
+Exercises postfixed with a "(+)" indicate ones for which a benchmark test has been provided (see 'Benchmarks' section below)
+
 ### Chapter 1 - "A Tutorial Introduction"
 
 * 1-01 - echo4:  Variation of 'echo3' which also prints the name of the envoking command
@@ -31,6 +33,15 @@ This repository contains solutions to the examples presented in the book
 * 2-02 -
   * genconv [p]:  Generic conversions package
   * gounits [genconv]:  Converts a broad range of units from one to the other
+* 2-03 -
+  * popcount1 [p] (+): Variation on 'popcount' which uses a loop as opposed to a single expression
+  * popcount1demo:  Demo program for popcount1
+* 2-04 -
+  * popcount2 [p] (+): Variation on 'popcount' which uses bit shifting as opposed to a lookup table
+  * popcount2demo:  Demo program for popcount2
+* 2-05 -
+  * popcount3 [p] (+): Variation on 'popcount' which uses bit clearing as opposed to a lookup table
+  * popcount3demo:  Demo program for popcount3
 
 ### Extras
 
@@ -86,20 +97,21 @@ This repository also includes working examples from the book.  These are also av
 * Section 2.6 - "Packages and Files"
   * tempconv [p]
   * cf [tempconv]
+* Section 2.6.2 - "Package Initialization
+  * popcount [p]
+  * popcountdemo
 
 ##Benchmarking
 
 Some of the exercises also are provided with benchmark tests.  These exercises are indicated in the list above  with a '(+)' after the program name.  Section 11.4 discusses how to execute these tests.  But, in general, they can be executed using the following commands.  The last command returns you to the main GOPATH directory.
 
-    $ cd $GOPATH/src/<chapter>/<exercise program name>
-    $ go test -bench .
-    $ cd $GOPATH
+    $ go test -bench=. <chapter>/<exercise program or package name>
 
-For example, to run the benchmark assoicated with 'echo6' from exercise 1-03 you would:
+For example, to run the benchmark associated with 'echo6' from exercise 1-03 you would:
 
-    $ cd $GOPATH/src/ch01/echo6
-    $ go test -bench .
-    $ cd $GOPATH
+    $ go test -bench=.
+
+In addition, a script named 'benchmare.sh' has been provided to execute all benchmarks
 
 ##Test Files
 
