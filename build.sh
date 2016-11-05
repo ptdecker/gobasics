@@ -1,7 +1,7 @@
 #!/bin/bash
 SRC="./src"
 
-for d in $SRC'/*'; do
+for d in $SRC'/ch*' $SRC'/extras'; do
     pd=$d'/*'
     for p in $pd; do
         f=$(echo $p | cut -d/ -f3-)

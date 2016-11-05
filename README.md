@@ -43,6 +43,18 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * popcount3 [p] (+): Variation on 'popcount' which uses bit clearing as opposed to a lookup table
   * popcount3demo:  Demo program for popcount3
 
+### Chapter 3 - "Basic Data Types"
+
+* 3-01 -
+  * surface1 (+): Variation on 'surface' that adds guard code for invalid polygons
+  * surface2 (+): A significantly faster variation of 'surface1' that outputs integers instead of floats
+* 3-02 -
+  * surface3: Variation of 'surface1' that renders an egg box-like surface
+  * surface4: Variation of 'surface1' that renders a mogul-like surface
+  * surface5: Variation of 'surface1' that renders a "monkey saddle" surface
+* 3-04 -
+  * surface6: Variation of 'surface1' that colors the polygons from red at peaks to blue
+
 ### Extras
 
 The following programs are provided as extras.
@@ -100,6 +112,11 @@ This repository also includes working examples from the book.  These are also av
 * Section 2.6.2 - "Package Initialization
   * popcount [p]
   * popcountdemo
+
+## Chapter 3
+
+* Section 3.2 - "Floating-Point Numbers"
+  * surface
 
 ##Benchmarking
 
