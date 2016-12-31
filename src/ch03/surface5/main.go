@@ -2,6 +2,9 @@
 // "monkey saddle" (c.f. http://en.wikipedia.com/wiki/Monkey_saddle).  It also includes guard code to
 // ignore any polygons whose corner values are infinte or NaN.
 
+// c.f. https://developer.mozilla.org/en-US/docs/Web/SVG
+// c.f. https://jwatt.org/svg/authoring/
+
 package main
 
 import (
@@ -56,10 +59,16 @@ func genSVG() {
 
     // Open SVG tag
     fmt.Fprintf(out, "<svg " +
+        "version='1.1' " +
+        "baseProfile='full' " +
         "xmlns='http://www.w3.org/2000/svg' " +
-        "style='stroke: grey; fill: white; stroke-width: 0.7' " +
-        "width='%d' " +
-        "height='%d'>\n",
+        "xmlns:xlink='http://www.w3.org/1999/xlink' " +
+        "xmlns:ev='http://www.w3.org/2001/xml-events' " +
+        "stroke='grey' " +
+        "stroke-width='0.7px' " +
+        "fill='white' " +
+        "width='%dpx' " +
+        "height='%dpx'>\n",
         width, height)
 
     // Add SVG body skipping polygons with invalid corners
