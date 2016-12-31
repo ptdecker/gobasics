@@ -10,20 +10,31 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 
 ### Chapter 1 - "A Tutorial Introduction"
 
-* 1-01 - echo4:  Variation of 'echo3' which also prints the name of the envoking command
-* 1-02 - echo5:  Variation of 'echo2' which also prints the index of each argument one per line
+* 1-01 - 
+  * echo4:  Variation of 'echo3' which also prints the name of the envoking command
+* 1-02 - 
+  * echo5:  Variation of 'echo2' which also prints the index of each argument one per line
 * 1-03 -
   * echo6 (+):  Variation of 'echo2' that also displays timing. Compare against 'echo7' for exercise 1-03 solution.
   * echo7 (+):  Variation of 'echo3' that also displays timing. Execution is slightly faster than 'echo6'
-* 1-04 - dup4:  Prints the names of all files in which a duplicate line appears
-* 1-05 - lissajous2:  Variation o 'lissajous1' with a color variation of a traditional oscilliscope image
-* 1-06 - lissajous3:  Variation of 'lissajous1' with a dynamic color variation based upon current cycle
-* 1-07 - fetch2:  Variation of 'fetch1' that leverages io.Copy to avoid the need for a buffer
-* 1-08 - fetch3:  Variation of 'fetch2' that adds an 'http://' prefix if it is missing from the URL
-* 1-09 - fetch4:  Variation of 'fetch3' that also prints the HTTP status code
-* 1-10 - fetchall2:  Variation of 'fetch1' that fetches the URLs twice without exiting to shell. To satisfy the excercise requirement of writting the output to a file, run with `bin/fetchall2 http://facebook.com > results.txt` to pipe output to results.txt.
-* 1-11 - Use 'fetchall1' to run a sample of sites from [Alexa](http://www.alexa.com/topsites). A possible run could be `bin/fetchall1 http://google.com http://youtube.com http://facebook.com http://baidu.com http://yahoo.com http://wikipedia.org http://amazon.com http://twitter.com http://qq.com > results.txt`. I was not able to find a site that would not respond.  So, you can use extras/norespserver as a testing tool.
-* 1-12 - lissajous5:  Variation of 'lissajous4' adding support for passing a 'cycles' parameter to set number of cycles in addition to the basic web server 'lissajous4' added to 'lissajous3'
+* 1-04 - 
+  * dup4:  Prints the names of all files in which a duplicate line appears
+* 1-05 - 
+  * lissajous2:  Variation o 'lissajous1' with a color variation of a traditional oscilliscope image
+* 1-06 - 
+  * lissajous3:  Variation of 'lissajous1' with a dynamic color variation based upon current cycle
+* 1-07 - 
+  * fetch2:  Variation of 'fetch1' that leverages io.Copy to avoid the need for a buffer
+* 1-08 - 
+  * fetch3:  Variation of 'fetch2' that adds an 'http://' prefix if it is missing from the URL
+* 1-09 -
+  * fetch4:  Variation of 'fetch3' that also prints the HTTP status code
+* 1-10 -
+  * fetchall2:  Variation of 'fetch1' that fetches the URLs twice without exiting to shell. To satisfy the excercise requirement of writting the output to a file, run with `bin/fetchall2 http://facebook.com > results.txt` to pipe output to results.txt.
+* 1-11 -
+  * Use 'fetchall1' to run a sample of sites from [Alexa](http://www.alexa.com/topsites). A possible run could be `bin/fetchall1 http://google.com http://youtube.com http://facebook.com http://baidu.com http://yahoo.com http://wikipedia.org http://amazon.com http://twitter.com http://qq.com > results.txt`. I was not able to find a site that would not respond.  So, you can use extras/norespserver as a testing tool.
+* 1-12 -
+  * lissajous5:  Variation of 'lissajous4' adding support for passing a 'cycles' parameter to set number of cycles in addition to the basic web server 'lissajous4' added to 'lissajous3'
 
 ### Chapter 2 - "Program Structure"
 
@@ -52,8 +63,11 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * surface3: Variation of 'surface1' that renders an egg box-like surface
   * surface4: Variation of 'surface1' that renders a mogul-like surface
   * surface5: Variation of 'surface1' that renders a "monkey saddle" surface
-* 3-04 -
+* 3-03 -
   * surface6: Variation of 'surface1' that colors the polygons from red at peaks to blue
+* 3-04 -
+  * surface7: Variation of 'surface6' plus the addition of a built-in basic web server
+* 3-05 -
 
 ### Extras
 
@@ -117,6 +131,8 @@ This repository also includes working examples from the book.  These are also av
 
 * Section 3.2 - "Floating-Point Numbers"
   * surface
+* Section 3.3 - "Complex Numbers"
+  * mandelbrot
 
 ##Benchmarking
 
