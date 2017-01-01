@@ -39,19 +39,19 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 ### Chapter 2 - "Program Structure"
 
 * 2-01 -
-  * tempconv1 [p]:  Extends 'tempconv' to include types, constants, and functions to support the Kelvin scale
+  * tempconv1 (p):  Extends 'tempconv' to include types, constants, and functions to support the Kelvin scale
   * cfk [tempconv1]: Variation of 'cf' extended to support Kelvin conversions using 'tempconv1'  
 * 2-02 -
-  * genconv [p]:  Generic conversions package
-  * gounits [genconv]:  Converts a broad range of units from one to the other
+  * genconv (p):  Generic conversions package
+  * gounits (genconv):  Converts a broad range of units from one to the other
 * 2-03 -
-  * popcount1 [p] (+): Variation on 'popcount' which uses a loop as opposed to a single expression
+  * popcount1 (p, +): Variation on 'popcount' which uses a loop as opposed to a single expression
   * popcount1demo:  Demo program for popcount1
 * 2-04 -
-  * popcount2 [p] (+): Variation on 'popcount' which uses bit shifting as opposed to a lookup table
+  * popcount2 (p, +): Variation on 'popcount' which uses bit shifting as opposed to a lookup table
   * popcount2demo:  Demo program for popcount2
 * 2-05 -
-  * popcount3 [p] (+): Variation on 'popcount' which uses bit clearing as opposed to a lookup table
+  * popcount3 (p, +): Variation on 'popcount' which uses bit clearing as opposed to a lookup table
   * popcount3demo:  Demo program for popcount3
 
 ### Chapter 3 - "Basic Data Types"
@@ -73,6 +73,14 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * mandelbrot2: Adds supersampling anti-aliasing to 'mandelbrot1'
 * 3-07 -
   * newton1: Uses Newton's method to render z^4 - 1 = 0 Julia set fractal
+* 3-08 - ** UNSOLVED **
+  * mandelbrot3: Re-implements 'mandelbrot1' (complex128) with benchmarks
+  * mandelbrot4: Re-implements 'mandelbrot1' using complex64 with benchmarks
+  * mandelbrot5: Re-implements 'mandelbrot1' using big.Float with benchmarks
+  * mandelbrot6: Re-implements 'mandelbrot1' using big.Rat with benchmarks
+* 3-09 -
+  * mandelbrot7: Re-implements 'mandelbrot1' as a web service supporting x,y coordinates and zoom parameters. For example, try 'http://localhost:8000/?zoom=1000&x=-0.7325&y=-0.241'.
+
 
 ### Extras
 
@@ -92,7 +100,7 @@ Each worked excercise attempts to only use capabilities that have been introduce
 
 ## Book Examples
 
-This repository also includes working examples from the book.  These are also available from the authors, but the versions that I hand entered (hard way as opposed to pulling them down from the author) are included for completness. "[p]" is used to indicate packages which contain no 'main' and thus will appear directy in `bin`.  For convienence, when such packages are used, the package which ccontains 'main' lists the other packages it uses.
+This repository also includes working examples from the book.  These are also available from the authors, but the versions that I hand entered (hard way as opposed to pulling them down from the author) are included for completness. "(p)" is used to indicate packages which contain no 'main' and thus will appear directy in `bin`.  For convienence, when such packages are used, the package which ccontains 'main' lists the other packages it uses.
 
 ### Chapter 1
 
@@ -124,12 +132,12 @@ This repository also includes working examples from the book.  These are also av
   * boiling
   * ftoc
 * Section 2.3.2 - "Pointers"
-  * echo8 [named 'echo4' in the text]
+  * echo8 (named 'echo4' in the text)
 * Section 2.6 - "Packages and Files"
-  * tempconv [p]
+  * tempconv (p)
   * cf [tempconv]
 * Section 2.6.2 - "Package Initialization
-  * popcount [p]
+  * popcount (p)
   * popcountdemo
 
 ## Chapter 3

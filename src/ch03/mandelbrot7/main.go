@@ -1,4 +1,5 @@
-// Mandelbrot1 emits colorized PNG image of the Mandelbrot fractal
+// Mandelbrot7 provides a web service that generates colorized PNG image of the Mandelbrot fractal
+// and supports x, y, and zoom values as parameters passed in the HTTP request
 
 // c.f. http://www.fractalforums.com/programming/newbie-how-to-map-colors-in-the-mandelbrot-set/
 // c.f. https://en.wikipedia.org/wiki/Mandelbrot_set
@@ -10,20 +11,47 @@ import (
     "image"
     "image/color"
     "image/png"
+    "io"
+    "log"
     "math"
     "math/cmplx"
-    "os"
+    "net/http"
+    "strconv"
 )
 
 func main() {
 
+    handler := func(w http.ResponseWriter, r *http.Request) {
+        var x, y, z float64
+        var err error
+        if err := r.ParseForm(); err != nil {
+            log.Print(err)
+        }
+        if z, err = strconv.ParseFloat(r.FormValue("zoom"), 64); z == 0 || err != nil {
+            z = 1
+        }
+        if x, err = strconv.ParseFloat(r.FormValue("x"), 64); err != nil {
+            x = 0
+        }
+        if y, err = strconv.ParseFloat(r.FormValue("y"), 64); err != nil {
+            y = 0
+        }
+        genPNG(w, -2 / z + x, -2 / z + y, 2 / z + x, 2 / z + y)
+    }
+    http.HandleFunc("/", handler)
+    log.Fatal(http.ListenAndServe("localhost:8000", nil))
+
+}
+
+// Generate Mandelbrot PNG
+func genPNG(out io.Writer, xmin float64, ymin float64, xmax float64, ymax float64) {
+
     const (
-        xmin, ymin, xmax, ymax  = -2, -2, 2, 2  // Mandelbrot space coordinates
-        width, height           = 1024, 1024    // Rendered image size in pixels
+        width = 1024
+        height = 1024
     )
 
     // Iterate through all pixels in the image mapping each pixel into Mandelbrot space
-
     img := image.NewRGBA(image.Rect(0, 0, width, height))
     for py := 0; py < height; py++ {
         y := float64(py) / height * (ymax - ymin) + ymin
@@ -33,8 +61,7 @@ func main() {
             img.Set(px, py, mandelbrot(z))
         }
     }
-    png.Encode(os.Stdout, img) // NOTE: ignores errors
-
+    png.Encode(out, img) // NOTE: ignores errors
 }
 
 // Calculate number of iterations required to escape a circle radius of '2' 
