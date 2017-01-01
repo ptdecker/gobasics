@@ -30,24 +30,29 @@ func main() {
         for px := 0; px < width; px++ {
             x := float64(px) / width * (xmax - xmin) + xmin
             z := complex(x, y)
-            img.Set(px, py, mandelbrot(z))
+            img.Set(px, py, newton(z))
         }
     }
     png.Encode(os.Stdout, img) // NOTE: ignores errors
 
 }
 
-// Calculate number of iterations required to escape a circle radius of '2' 
-func mandelbrot(z complex128) color.Color {
+// Calculate z^4 - 1 = 0 using Newtons method
+//
+// c.f. https://github.com/adonovan/gopl.io/blob/master/ch3/mandelbrot/main.go
 
-    const iterations = 200
+func newton(z complex128) color.Color {
 
-    var v complex128
+    const (
+        iterations = 37
+        contrast = 16
+        threshold = 0.000001
+    )
 
     for n := uint8(0); n < iterations; n++ {
-        v = v * v + z
-        if cmplx.Abs(v) > 2 {
-            return map2RGB(255 - 16 * n)
+        z = z - (z - 1 / (z * z * z)) / 4
+        if cmplx.Abs(z * z * z * z - 1) < threshold {
+            return map2RGB(255 - contrast * n)
         }
     }
 

@@ -69,6 +69,10 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * surface7: Variation of 'surface6' plus the addition of a built-in basic web server
 * 3-05 -
   * mandelbrot1: Adds full-color rendering to 'mandelbrot'
+* 3-06 -
+  * mandelbrot2: Adds supersampling anti-aliasing to 'mandelbrot1'
+* 3-07 -
+  * newton1: Uses Newton's method to render z^4 - 1 = 0 Julia set fractal
 
 ### Extras
 

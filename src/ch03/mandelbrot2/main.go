@@ -1,8 +1,9 @@
-// Mandelbrot emits colorized PNG image of the Mandelbrot fractal
+// Mandelbrot2 emits colorized PNG image of the Mandelbrot fractal using super-sampling to reduce aliasing
 
 // c.f. http://www.fractalforums.com/programming/newbie-how-to-map-colors-in-the-mandelbrot-set/
 // c.f. https://en.wikipedia.org/wiki/Mandelbrot_set
 // c.f. "The Science of Fractal Images", Springer-Verlang, ISBN 0-387-96608-0
+// c.f. https://web.cs.wpi.edu/~matt/courses/cs563/talks/antialiasing/methods.html
 
 package main
 
@@ -10,31 +11,67 @@ import (
     "image"
     "image/color"
     "image/png"
+    "io"
     "math"
     "math/cmplx"
     "os"
 )
 
+const (
+    width  = 2048
+    height = 2048
+)
+
+var virtualImage [width][height]color.Color
+var sampledImage [width / 2][height / 2]color.Color
+
 func main() {
 
-    const (
-        xmin, ymin, xmax, ymax  = -2, -2, 2, 2  // Mandelbrot space coordinates
-        width, height           = 1024, 1024    // Rendered image size in pixels
-    )
+    calcVirtualImage(-2, -2, 2, 2)
+    sampleImage()
+    renderPNGImage(os.Stdout)
+}
 
-    // Iterate through all pixels in the image mapping each pixel into Mandelbrot space
+// Render an image to a PNG
+func renderPNGImage(w io.Writer) {
+    img := image.NewRGBA(image.Rect(0, 0, width / 2, height / 2))
+    for py := 0; py < (height / 2); py++ {
+        for px := 0; px < (width / 2); px++ {
+            img.Set(px, py, sampledImage[px][py])
+        }
+    }
+    png.Encode(w, img) // NOTE: ignores errors
+}
 
-    img := image.NewRGBA(image.Rect(0, 0, width, height))
+// Create a new image by supersampling another image
+func sampleImage() {
+    for py := 0; py < (height / 2); py++ {
+        for px := 0; px < (width / 2); px++ {
+
+            r1, g1, b1, _ := color.Color.RGBA(virtualImage[2 * px][2 * py])
+            r2, g2, b2, _ := color.Color.RGBA(virtualImage[2 * px + 1][2 * py])
+            r3, g3, b3, _ := color.Color.RGBA(virtualImage[2 * px][2 * py + 1])
+            r4, g4, b4, _ := color.Color.RGBA(virtualImage[2 * px + 1][2 * py + 1])
+
+            r := (r1 + r2 + r3 + r4) / 4
+            g := (g1 + g2 + g3 + g4) / 4
+            b := (b1 + b2 + b3 + b4) / 4
+
+            sampledImage[px][py] = color.RGBA{uint8(r), uint8(g), uint8(b), 255}
+        }
+    }
+}
+
+// Calulate a Mandelbrot set
+func calcVirtualImage(xmin, ymin, xmax, ymax float64) {
     for py := 0; py < height; py++ {
         y := float64(py) / height * (ymax - ymin) + ymin
         for px := 0; px < width; px++ {
             x := float64(px) / width * (xmax - xmin) + xmin
             z := complex(x, y)
-            img.Set(px, py, mandelbrot(z))
+            virtualImage[px][py] = mandelbrot(z)
         }
     }
-    png.Encode(os.Stdout, img) // NOTE: ignores errors
-
 }
 
 // Calculate number of iterations required to escape a circle radius of '2' 
