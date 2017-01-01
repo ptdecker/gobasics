@@ -68,6 +68,7 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 * 3-04 -
   * surface7: Variation of 'surface6' plus the addition of a built-in basic web server
 * 3-05 -
+  * mandelbrot1: Adds full-color rendering to 'mandelbrot'
 
 ### Extras
 
