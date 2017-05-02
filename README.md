@@ -74,8 +74,8 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 * 3-07 -
   * newton1: Uses Newton's method to render z^4 - 1 = 0 Julia set fractal
 * 3-08 - ** UNSOLVED **
-  * mandelbrot3: Re-implements 'mandelbrot1' (complex128) with benchmarks
-  * mandelbrot4: Re-implements 'mandelbrot1' using complex64 with benchmarks
+  * mandelbrot3: Re-implements 'mandelbrot1' using complex64 with benchmarks
+  * mandelbrot4: Re-implements 'mandelbrot1' using complex128 with benchmarks
   * mandelbrot5: Re-implements 'mandelbrot1' using big.Float with benchmarks
   * mandelbrot6: Re-implements 'mandelbrot1' using big.Rat with benchmarks
 * 3-09 -
