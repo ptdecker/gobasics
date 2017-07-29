@@ -7,7 +7,11 @@ import (
 	"bytes"
 	"unicode/utf8"
 	"unicode"
+	"strings"
 )
+
+//c.f. https://stackoverflow.com/questions/29038314/determining-whitespace-in-go
+const white_space = "\t\n\v\f\r \u0085\u00A0\u1680" // basic whitespace - could be expanded
 
 // reverse()
 // c.f. https://stackoverflow.com/questions/1752414/how-to-reverse-a-string-in-go#10030772
@@ -23,8 +27,32 @@ func reverse(s string) string {
 // comma()
 
 func comma(s string) string {
+
 	var buf bytes.Buffer
+	var decpart string
 	i := 1
+
+	// Remove leading white space
+
+	s = strings.Trim(s, white_space)
+
+	// Carve off first number using white space as a delimiter
+
+	lastrune := strings.IndexFunc(s, unicode.IsSpace)
+	if lastrune > 0 {
+		s = s[:lastrune]
+	}
+
+	// Carve off decimal portion if it exists
+
+	decpos := strings.LastIndexAny(s, ".")
+	if decpos > 0 {
+		decpart = s[decpos:]
+		s = s[:len(s)-decpos]
+	}
+
+	// Add commas by walking through digits in reverse
+
 	for len(s) > 0 {
 		r, size := utf8.DecodeLastRuneInString(s)
 		s = s[:len(s)-size]
@@ -34,9 +62,14 @@ func comma(s string) string {
 				buf.WriteString(",")
 			}
 			i++
+		} else if r == '+' || r == '-' {
+			buf.WriteRune(r)
 		}
 	}
-	return reverse(buf.String())
+
+	// Reverse buffer and return
+
+	return reverse(buf.String()) + decpart
 }
 
 // main()
