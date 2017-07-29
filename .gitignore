@@ -3,3 +3,4 @@ src/golang.org
 src/gopl.io
 /bin
 /pkg
+.idea*
