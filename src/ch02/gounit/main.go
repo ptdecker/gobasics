@@ -95,8 +95,8 @@ func conv(v float64, from string, to string) {
         return
     }
 
-    fmt.Fprintf(os.Stderr,"%s: unknown conversion from '%s' to '%s'\n", os.Args[0], from, to);
-    os.Exit(1)
+    fmt.Fprintf(os.Stderr,"%s: unknown conversion from '%s' to '%s'\n", os.Args[0], from, to)
+	os.Exit(1)
 
 }
        

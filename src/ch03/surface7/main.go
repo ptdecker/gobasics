@@ -65,7 +65,7 @@ func corner(i, j int) (float64, float64, float64, bool) {
     sx := width  / 2 + (x - y) * cos30 * xyscale
     sy := height / 2 + (x + y) * sin30 * xyscale - z * zscale
 
-    return sx, sy, z, (math.IsInf(sx, 0) || math.IsInf(sy, 0) || math.IsNaN(sx) || math.IsNaN(sy)) 
+    return sx, sy, z, math.IsInf(sx, 0) || math.IsInf(sy, 0) || math.IsNaN(sx) || math.IsNaN(sy)
 }
 
 // Calculate the cells

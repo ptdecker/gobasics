@@ -15,6 +15,6 @@ func main() {
     for i, arg := range os.Args[1:] { 
         // Note: Printf is introduced in section 1.3 of the book so using
         //       it here for a section 1.2 exercise is a forward reference
-        fmt.Printf("%d:\t%s\n", i + 1, arg);
+        fmt.Printf("%d:\t%s\n", i + 1, arg)
     }
 }

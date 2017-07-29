@@ -60,7 +60,7 @@ func corner(i, j int) (int, int, bool) {
     sx := width  / 2 + (x - y) * cos30 * xyscale
     sy := height / 2 + (x + y) * sin30 * xyscale - z * zscale
 
-    return roundToInt(sx), roundToInt(sy), (math.IsInf(sx, 0) || math.IsInf(sy, 0) || math.IsNaN(sx) || math.IsNaN(sy)) 
+    return roundToInt(sx), roundToInt(sy), math.IsInf(sx, 0) || math.IsInf(sy, 0) || math.IsNaN(sx) || math.IsNaN(sy)
 }
 
 // Generate the SVG

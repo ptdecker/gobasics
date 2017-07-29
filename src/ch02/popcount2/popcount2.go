@@ -20,7 +20,7 @@ func PopCount(x uint64) int {
         if x & bitmask != 0 {
             bitcount++
         }
-        bitmask = (bitmask << 1)
+        bitmask = bitmask << 1
     }
     return bitcount
 }
