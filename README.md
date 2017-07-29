@@ -80,6 +80,8 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * mandelbrot6: Re-implements 'mandelbrot1' using big.Rat with benchmarks
 * 3-09 -
   * mandelbrot7: Re-implements 'mandelbrot1' as a web service supporting x,y coordinates and zoom parameters. For example, try 'http://localhost:8000/?zoom=1000&x=-0.7325&y=-0.241'.
+* 3-10 -
+  * comma1: A non-recursive version of 'comma'
 
 
 ### Extras
