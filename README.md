@@ -84,6 +84,10 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * comma1: A non-recursive version of 'comma'
 * 3-11 -
   * comma2: Adds support of floating-point numbers to 'comma1'
+* 3-12 - 
+  * isanagram1:  Tests two strings to see if they are anagrams of each other
+* 3-13 -
+  * const: Defines decimal orders of magnitude constants
 
 
 ### Extras
