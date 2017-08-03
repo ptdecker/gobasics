@@ -8,12 +8,12 @@
 package main
 
 import (
-    "image"
-    "image/color"
-    "image/png"
-    "math"
-    "math/big"
-    "os"
+//    "image"
+//    "image/color"
+//    "image/png"
+//    "math"
+//    "math/big"
+//    "os"
 )
 
 func main() {
@@ -25,18 +25,18 @@ func main() {
 
     // Iterate through all pixels in the image mapping each pixel into Mandelbrot space
 
-    img := image.NewRGBA(image.Rect(0, 0, width, height))
-    for py := int64(0); py < height; py++ {
-        y := new(big.Float).SetInt64(py) / height * (ymax - ymin) + ymin
-        for px := 0; px < width; px++ {
-            x := new(big.Float).SetInt(px) / width * (xmax - xmin) + xmin
-            img.Set(px, py, mandelbrot(x, y)) // where a + xi represents the imaginary number
-        }
-    }
-    png.Encode(os.Stdout, img) // NOTE: ignores errors
+//    img := image.NewRGBA(image.Rect(0, 0, width, height))
+//    for py := int64(0); py < height; py++ {
+//        y := new(big.Float).SetInt64(py) / height * (ymax - ymin) + ymin
+//        for px := 0; px < width; px++ {
+//            x := new(big.Float).SetInt(px) / width * (xmax - xmin) + xmin
+//            img.Set(px, py, mandelbrot(x, y)) // where a + xi represents the imaginary number
+//        }
+//    }
+//    png.Encode(os.Stdout, img) // NOTE: ignores errors
 
 }
-
+/*
 // Calculate number of iterations required to escape a circle radius of '2' 
 // r = real part, i = imaginary part
 func mandelbrot(r Float, i Float) color.Color {
@@ -87,3 +87,4 @@ func map2RGB(n uint8) (color.Color) {
 
     return color.Black
 }
+*/
