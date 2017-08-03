@@ -20,7 +20,7 @@ func init() {
 
 // Count the bits in a slice of bytes
 
-func countbits(sb [32]uint8) int {
+func countbits(sb [sha256.Size]uint8) int {
 	var bits int = 0
 	for i := range sb {
 		bits += int(pc[sb[i]])
@@ -30,7 +30,7 @@ func countbits(sb [32]uint8) int {
 
 // Determines count of different bits between two SHA256 hashes
 
-func SHA256bitdiff(sha1, sha2 [32]uint8) int {
+func SHA256bitdiff(sha1, sha2 [sha256.Size]uint8) int {
 	b1 := countbits(sha1)
 	b2 := countbits(sha2)
 	if b1 > b2 {

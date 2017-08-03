@@ -58,7 +58,7 @@ func comma(s string) string {
 		s = s[:len(s)-size]
 		if unicode.IsDigit(r) {
 			buf.WriteRune(r)
-			if (len(s) > 0 && i%3 == 0) {
+			if len(s) > 0 && i%3 == 0 {
 				buf.WriteString(",")
 			}
 			i++
