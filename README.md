@@ -89,6 +89,12 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 * 3-13 -
   * const: Defines decimal orders of magnitude constants
 
+### Chapter 4 - "Composite Types"
+
+* 4-01 -
+  * sha256-2: determines the number of bits that differ between two SHA256 hashes
+
+
 
 ### Extras
 
