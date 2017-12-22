@@ -4,6 +4,9 @@
 // TODO: http://learngowith.me/a-better-way-of-handling-stdin/
 // c.f. https://www.reddit.com/r/golang/comments/4su0js/a_better_way_of_handling_stdin/?st=j5vrysv3&sh=65d80256
 
+// For text data, see files in 'data' folder referring to README.md as a guide.
+// c.f. https://www.di-mgt.com.au/sha_testvectors.html
+
 package main
 
 import (
@@ -18,11 +21,14 @@ import (
 // main
 
 func main() {
+
 	var err error
 	var r rune
+
     buff := bytes.NewBuffer(nil)
 	reader := bufio.NewReader(os.Stdin)
-	for { 
+
+	for {
 		r, _, err = reader.ReadRune()
 		if err == io.EOF {
             break
@@ -37,6 +43,8 @@ func main() {
             continue
         }
 	}
+
     sum := sha256.Sum256(buff.Bytes())
     fmt.Printf("%x\n", sum)
+
 }

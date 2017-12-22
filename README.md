@@ -1,4 +1,4 @@
-Worked Excercises from _The Go Programming Language_, by Alan A. A. Donovan and Brian W. Kernighan 
+Worked Excercises from _The Go Programming Language_, by Alan A. A. Donovan and Brian W. Kernighan
 =======
 
 This repository contains solutions to the examples presented in the book
@@ -10,22 +10,22 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 
 ### Chapter 1 - "A Tutorial Introduction"
 
-* 1-01 - 
+* 1-01 -
   * echo4:  Variation of 'echo3' which also prints the name of the envoking command
-* 1-02 - 
+* 1-02 -
   * echo5:  Variation of 'echo2' which also prints the index of each argument one per line
 * 1-03 -
   * echo6 (+):  Variation of 'echo2' that also displays timing. Compare against 'echo7' for exercise 1-03 solution.
   * echo7 (+):  Variation of 'echo3' that also displays timing. Execution is slightly faster than 'echo6'
-* 1-04 - 
+* 1-04 -
   * dup4:  Prints the names of all files in which a duplicate line appears
-* 1-05 - 
+* 1-05 -
   * lissajous2:  Variation o 'lissajous1' with a color variation of a traditional oscilliscope image
-* 1-06 - 
+* 1-06 -
   * lissajous3:  Variation of 'lissajous1' with a dynamic color variation based upon current cycle
-* 1-07 - 
+* 1-07 -
   * fetch2:  Variation of 'fetch1' that leverages io.Copy to avoid the need for a buffer
-* 1-08 - 
+* 1-08 -
   * fetch3:  Variation of 'fetch2' that adds an 'http://' prefix if it is missing from the URL
 * 1-09 -
   * fetch4:  Variation of 'fetch3' that also prints the HTTP status code
@@ -40,7 +40,7 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 
 * 2-01 -
   * tempconv1 (p):  Extends 'tempconv' to include types, constants, and functions to support the Kelvin scale
-  * cfk [tempconv1]: Variation of 'cf' extended to support Kelvin conversions using 'tempconv1'  
+  * cfk [tempconv1]: Variation of 'cf' extended to support Kelvin conversions using 'tempconv1'
 * 2-02 -
   * genconv (p):  Generic conversions package
   * gounits (genconv):  Converts a broad range of units from one to the other
@@ -84,7 +84,7 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * comma1: A non-recursive version of 'comma'
 * 3-11 -
   * comma2: Adds support of floating-point numbers to 'comma1'
-* 3-12 - 
+* 3-12 -
   * isanagram1:  Tests two strings to see if they are anagrams of each other
 * 3-13 -
   * const: Defines decimal orders of magnitude constants
@@ -93,8 +93,20 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 
 * 4-01 -
   * sha256-2: determines the number of bits that differ between two SHA256 hashes
+* 4-02 -
+  * sha: prints SHA256, SHA384, or SHA512 hashes.  SHA256 is default.  Use '-384' or '-512' to select alternate approaches.
 
+### Data
 
+The following test data files are provided in the 'data' directory
+
+* 448bits.txt - Contains exactly 448 bits of test text data with no trailing new line.  Complies with one of the test vectors for testing the 'sha' program (c.f. https://www.di-mgt.com.au/sha_testvectors.html)
+* 896bits.txt - Contains exactly 896 bits of test text data with no trailing new line.  Complies with one of the test vectors for testing the 'sha' program (c.f. https://www.di-mgt.com.au/sha_testvectors.html)
+* abc.txt - Contains text string of "abc" with no trailing new line (24 bits). Complies with one of the test vectors for testing the 'sha' program (c.f. https://www.di-mgt.com.au/sha_testvectors.html)
+* empty.txt - Contains nothing--A totally empty file with no new line nor end of file characters.  Good for testing empty file handling.  Complies with one of the test vectors for testing the 'sha' program (c.f. https://www.di-mgt.com.au/sha_testvectors.html)
+* hasdups.txt - Contains duplicate lines of data.
+* nodups.txt - Contains no duplicate lines of data.
+* numbers.txt - Test numbers of various formats (positive and negative, integers and floating point)
 
 ### Extras
 
@@ -138,7 +150,7 @@ This repository also includes working examples from the book.  These are also av
   * server1
   * server2
   * server3
-  * lissajous4 - 'lissajous3' with built-in web server 
+  * lissajous4 - 'lissajous3' with built-in web server
 
 ## Chapter 2
 
@@ -186,3 +198,14 @@ The following test data files are provided to support manually testing the exerc
 These solutions are copyright under the terms of the GNU GENERAL PUBLIC LICENSE v3 (see LICENSE) with the following exceptions:
 
 * By definition, the code presented here draws from, and directly answers the excercises presented within, Donovan's and Kernighan's and Ritchie's "The Go Programing Language."
+
+##Handy Commands
+
+Hex Dumps
+
+    hexdump -C -n128 data/448bits.txt
+
+Removing Trailing New Line Characters
+
+    tr -d '\n' < data/448bits.txt > data/448bits2.txt
+
