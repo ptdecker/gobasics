@@ -99,6 +99,8 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * rev1: reverses the elements of an integer array passed to the reverse function as a pointer
 * 4-04 -
   * rotate1: rotates an array using a single pass
+* 4-05 -
+  * dedup: an in-place function that eliminates adjacent duplicates in a []string slice
 
 ### Data
 
