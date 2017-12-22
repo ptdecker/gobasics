@@ -95,6 +95,8 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * sha256-2: determines the number of bits that differ between two SHA256 hashes
 * 4-02 -
   * sha: prints SHA256, SHA384, or SHA512 hashes.  SHA256 is default.  Use '-384' or '-512' to select alternate approaches.
+* 4-03 -
+  * rev1: reverses the elements of an integer array passed to the reverse function as a pointer
 
 ### Data
 
@@ -172,6 +174,11 @@ This repository also includes working examples from the book.  These are also av
   * surface
 * Section 3.3 - "Complex Numbers"
   * mandelbrot
+
+### Chapter 4
+
+* Section 4.1 - "Arrays"
+  * rev
 
 ## Benchmarking
 
