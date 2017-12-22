@@ -1,6 +1,7 @@
 .D*
 src/golang.org
 src/gopl.io
+src/github.com
 /bin
 /pkg
 .idea*

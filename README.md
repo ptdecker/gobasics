@@ -98,7 +98,7 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 
 ### Data
 
-The following test data files are provided in the 'data' directory
+The following test data files are provided to support manually testing the exercises. Specifically, the ones that draw from standard input can be manually tested with these.
 
 * 448bits.txt - Contains exactly 448 bits of test text data with no trailing new line.  Complies with one of the test vectors for testing the 'sha' program (c.f. https://www.di-mgt.com.au/sha_testvectors.html)
 * 896bits.txt - Contains exactly 896 bits of test text data with no trailing new line.  Complies with one of the test vectors for testing the 'sha' program (c.f. https://www.di-mgt.com.au/sha_testvectors.html)
@@ -152,7 +152,7 @@ This repository also includes working examples from the book.  These are also av
   * server3
   * lissajous4 - 'lissajous3' with built-in web server
 
-## Chapter 2
+### Chapter 2
 
 * Section 2.2 - "Declarations"
   * boiling
@@ -166,14 +166,14 @@ This repository also includes working examples from the book.  These are also av
   * popcount (p)
   * popcountdemo
 
-## Chapter 3
+### Chapter 3
 
 * Section 3.2 - "Floating-Point Numbers"
   * surface
 * Section 3.3 - "Complex Numbers"
   * mandelbrot
 
-##Benchmarking
+## Benchmarking
 
 Some of the exercises also are provided with benchmark tests.  These exercises are indicated in the list above  with a '(+)' after the program name.  Section 11.4 discusses how to execute these tests.  But, in general, they can be executed using the following commands.  The last command returns you to the main GOPATH directory.
 
@@ -185,21 +185,13 @@ For example, to run the benchmark associated with 'echo6' from exercise 1-03 you
 
 In addition, a script named 'benchmare.sh' has been provided to execute all benchmarks
 
-##Test Files
-
-The following test data files are provided to support manually testing the exercises. Specifically, the ones that draw from standard input can be manually tested with these.
-
-* hasdups.txt: a text file containing duplicate lines
-* nodups.txt: a text file that does not contain duplicate lines
-* numbers.txt: a text file containing one number (positive and negative integers and floating point) per line
-
-##License
+## License
 
 These solutions are copyright under the terms of the GNU GENERAL PUBLIC LICENSE v3 (see LICENSE) with the following exceptions:
 
 * By definition, the code presented here draws from, and directly answers the excercises presented within, Donovan's and Kernighan's and Ritchie's "The Go Programing Language."
 
-##Handy Commands
+## Handy Commands
 
 Hex Dumps
 
