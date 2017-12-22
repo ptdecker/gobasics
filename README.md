@@ -97,6 +97,8 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
   * sha: prints SHA256, SHA384, or SHA512 hashes.  SHA256 is default.  Use '-384' or '-512' to select alternate approaches.
 * 4-03 -
   * rev1: reverses the elements of an integer array passed to the reverse function as a pointer
+* 4-04 -
+  * rotate1: rotates an array using a single pass
 
 ### Data
 
