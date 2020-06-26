@@ -1,6 +1,10 @@
 #!/bin/bash
 SRC="./src"
 
+export GOPATH=$HOME/Code/gobasics/
+export GOBIN=$HOME/Code/gobasics/bin
+
+echo Building...
 for d in $SRC'/ch*' $SRC'/extras'; do
     pd=$d'/*'
     for p in $pd; do

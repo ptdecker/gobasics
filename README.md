@@ -102,6 +102,12 @@ Exercises postfixed with a "(+)" indicate ones for which a benchmark test has be
 * 4-05 -
   * dedup: an in-place function that eliminates adjacent duplicates in a []string slice
 
+### Chapter 8 - "Goroutines and Channels"
+
+* 8-01 -
+  * clock3: A concurent time server on a given TCP port
+  * clockwall: A clock client that subscribes to a list of time servers
+
 ### Data
 
 The following test data files are provided to support manually testing the exercises. Specifically, the ones that draw from standard input can be manually tested with these.
@@ -183,6 +189,15 @@ This repository also includes working examples from the book.  These are also av
 
 * Section 4.1 - "Arrays"
   * rev
+
+### Chapter 8
+
+* Section 8.2 - "Goroutines"
+  * spinner
+* Section 8.3 - "Exmaple: Concurent Clock Server"
+  * clock1 - single threaded basic clock server
+  * clock2 - multi-threaded clock server
+  * netcat1 - read-only TCP net client
 
 ## Benchmarking
 
