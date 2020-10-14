@@ -5,3 +5,5 @@ src/github.com
 /bin
 /pkg
 .idea*
+*.code-workspace
+
